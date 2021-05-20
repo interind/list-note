@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="./notepad_30848.ico"/>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -32,22 +33,16 @@
               <div class="card-body">
                 <h5 class="card-title">Add new task</h5>
                 <form name="addTask">
-                  <input
-                    type="text"
-                    name="title"
-                    id="title"
-                    class="form-control"
-                    placeholder="Task title"
-                  />
-                  <input
-                    type="text"
-                    name="body"
-                    id="body"
-                    class="form-control mt-3"
-                    placeholder="Task body"
-                  />
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">New task</label>
+                    <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="task">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                    <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
                   <button type="submit" class="btn btn-primary mt-4">
-                    Add task
+                    add_task
                   </button>
                 </form>
               </div>

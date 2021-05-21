@@ -1,0 +1,17 @@
+.left {
+  background-color: rgb(0, 94, 255);
+  align-self: center;
+  border-radius: 50%;
+  width: 100px;
+  height: 70px;
+  color: #fff;
+}
+
+.right {
+  background-color: blueviolet;
+  align-self: center;
+  border-radius: 50%;
+  width: 100px;
+  height: 70px;
+  color: #fff;
+}

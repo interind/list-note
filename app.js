@@ -2,32 +2,36 @@ const tasks = [
   {
     _id: '5d2ca9e2e03d40b326596aa7',
     completed: true,
+    type: 'JavaScript',
     body:
-      'Occaecat non ea quis occaecat ad culpa amet deserunt incididunt elit fugiat pariatur. Exercitation commodo culpa in veniam proident laboris in. Excepteur cupidatat eiusmod dolor consectetur exercitation nulla aliqua veniam fugiat irure mollit. Eu dolor dolor excepteur pariatur aute do do ut pariatur consequat reprehenderit deserunt.\r\n',
-    title: 'Eu ea incididunt sunt consectetur fugiat non.',
+      'Написать функцию, которая принимает два числа и возвращает результат их умножения',
+    title: 'Задача на числа',
   },
   {
     _id: '5d2ca9e29c8a94095c1288e0',
     completed: false,
+    type: 'JavaScript',
     body:
-      'Aliquip cupidatat ex adipisicing veniam do tempor. Lorem nulla adipisicing et esse cupidatat qui deserunt in fugiat duis est qui. Est adipisicing ipsum qui cupidatat exercitation. Cupidatat aliqua deserunt id deserunt excepteur nostrud culpa eu voluptate excepteur. Cillum officia proident anim aliquip. Dolore veniam qui reprehenderit voluptate non id anim.\r\n',
+      'Сделайте функцию, которая принимает параметром число от 1 до 7, а возвращает день недели на русском языке.',
     title:
-      'Deserunt laborum id consectetur pariatur veniam occaecat occaecat tempor voluptate pariatur nulla reprehenderit ipsum.',
+      'Задача на числа',
   },
   {
     _id: '5d2ca9e2e03d40b3232496aa7',
     completed: true,
+    type: 'JavaScript',
     body:
-      'Occaecat non ea quis occaecat ad culpa amet deserunt incididunt elit fugiat pariatur. Exercitation commodo culpa in veniam proident laboris in. Excepteur cupidatat eiusmod dolor consectetur exercitation nulla aliqua veniam fugiat irure mollit. Eu dolor dolor excepteur pariatur aute do do ut pariatur consequat reprehenderit deserunt.\r\n',
-    title: 'Eu ea incididunt sunt consectetur fugiat non.',
+      'Сделай функцию, которая принимает массив любых целых чисел, которая возвращает истинну, если все элементы четные, если бы хотя бы один элемент не четный, то false.',
+    title: 'Задача на массивы',
   },
   {
     _id: '5d2ca9e29c8a94095564788e0',
     completed: false,
+    type: 'JavaScript',
     body:
-      'Aliquip cupidatat ex adipisicing veniam do tempor. Lorem nulla adipisicing et esse cupidatat qui deserunt in fugiat duis est qui. Est adipisicing ipsum qui cupidatat exercitation. Cupidatat aliqua deserunt id deserunt excepteur nostrud culpa eu voluptate excepteur. Cillum officia proident anim aliquip. Dolore veniam qui reprehenderit voluptate non id anim.\r\n',
+      'Написать функцию, которая принимает строку (в этом тексте 3-5 предложений), верните каждое первое слово в каждом предложении, через запятую.',
     title:
-      'Deserunt laborum id consectetur pariatur veniam occaecat occaecat tempor voluptate pariatur nulla reprehenderit ipsum.',
+      'Задача на строки',
   },
 ];
 
@@ -103,20 +107,35 @@ const tasks = [
       '--input-focus-box-shadow': '0 0 0 0.2rem rgba(141, 143, 146, 0.25)',
     },
   };
-  let lastDefaultTheme = 'default';
+  let lastDefaultTheme = localStorage.getItem('theme') || 'default';
 
+  setTheme(lastDefaultTheme);
   // Elements UI
   const listContainer = document.querySelector('.tasks-list-section .list-group');
   const form = document.forms['addTask'];
-  const {title: inputTitle, body: inputBody} = form.elements;
+  const {
+    title: inputTitle,
+    body: inputBody,
+    themeTask: inputTheme,
+  } = form.elements;
   const themeSelect = document.getElementById('themeSelect');
+  const btnLeft = document.querySelector('.left');
+  const btnRight = document.querySelector('.right');
 
   renderOfTasks(objOfTasks);
+
+
 
   // Events
   form.addEventListener('submit', onFormSubmitHandler);
   listContainer.addEventListener('mouseup', onDeleteHandler);
   themeSelect.addEventListener('change', onThemeSelectHandler);
+  btnLeft.addEventListener('mouseup', () => {
+    console.log('left');
+  });
+  btnRight.addEventListener('mouseup', () => {
+    console.log('right')
+  });
 
   //Functions
   function renderOfTasks(tasksList) {
@@ -130,7 +149,7 @@ const tasks = [
     listContainer.appendChild(fragment);
   }
 
-  function listItemTemplate({_id, title, body}) {
+  function listItemTemplate({_id, title, body, type}) {
     const li = document.createElement('li');
     li.classList.add(
       'list-group-item',
@@ -143,10 +162,17 @@ const tasks = [
 
     const span = document.createElement('span');
     span.textContent = title;
-    span.style.fontWeight = 'bold';
+    span.classList.add('ml-1');
+    span.style.fontStyle = 'italic';
+
+    const h6 = document.createElement('h6');
+    h6.textContent = type;
+    h6.classList.add('mr-1');
+    h6.classList.add('mb-0');
+    h6.style.fontWeight = 'bold';
 
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'delete_task';
+    deleteButton.textContent = '☠️ kill';
     deleteButton.classList.add(
       'btn',
       'btn-danger',
@@ -161,6 +187,7 @@ const tasks = [
       'w-100',
     );
 
+    li.appendChild(h6);
     li.appendChild(span);
     li.appendChild(deleteButton);
     li.appendChild(article);
@@ -221,6 +248,7 @@ const tasks = [
 
     setTheme(selectedTheme);
     lastDefaultTheme = selectedTheme;
+    localStorage.setItem('theme', selectedTheme);
   }
 
   function setTheme(name) {

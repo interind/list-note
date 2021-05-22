@@ -119,8 +119,6 @@ const tasks = [
     themeTask: inputTheme,
   } = form.elements;
   const themeSelect = document.getElementById('themeSelect');
-  const btnLeft = document.querySelector('.left');
-  const btnRight = document.querySelector('.right');
 
   renderOfTasks(objOfTasks);
 
@@ -130,12 +128,6 @@ const tasks = [
   form.addEventListener('submit', onFormSubmitHandler);
   listContainer.addEventListener('mouseup', onDeleteHandler);
   themeSelect.addEventListener('change', onThemeSelectHandler);
-  btnLeft.addEventListener('mouseup', () => {
-    console.log('left');
-  });
-  btnRight.addEventListener('mouseup', () => {
-    console.log('right')
-  });
 
   //Functions
   function renderOfTasks(tasksList) {
@@ -156,7 +148,6 @@ const tasks = [
       'd-flex',
       'align-items-center',
       'flex-wrap',
-      'mt-2',
     );
     li.setAttribute('data-task-id', _id);
 

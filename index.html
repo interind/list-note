@@ -26,47 +26,42 @@
         </select>
       </form>
     </nav>
-    <div class="container d-flex">
-      <button name="left" type="button" class="btn left">
-        left_
-      </button>
-      <div class="form-section mt-5  w-100">
+      <div class="two-container">
+        <iframe class="iframe-content" allowfullscreen type="text/html" scrolling="auto" src="https://codeshare.io/a3kKmz" frameborder="1"> </iframe>
+      <div class="list-container tasks-list-section">
         <div class="container">
-          <div class="row">
-            <div class="col col-8 mx-auto">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Конструктор задач</h5>
-                  <form name="addTask">
-                    <div class="mb-3">
-                      <label for="exampleFormControlInput1" class="form-label">Тема задачи:</label>
-                      <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="task">
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleFormControlInput1" class="form-label">Группа:</label>
-                      <input type="text" name="theme-task" class="form-control" id="exampleFormControlInput1" placeholder="group">
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleFormControlTextarea1" class="form-label">Описание:</label>
-                      <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-4">
-                      сохранить
-                    </button>
-                  </form>
-                </div>
+          <ul class="list-group"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="form-section mt-5 w-100">
+      <div class="container">
+        <div class="row">
+          <div class="col col-8 mx-auto">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Конструктор задач</h5>
+                <form name="addTask">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Тема задачи:</label>
+                    <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="task">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Группа:</label>
+                    <input type="text" name="theme-task" class="form-control" id="exampleFormControlInput1" placeholder="group">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Описание:</label>
+                    <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary mt-4">
+                    сохранить
+                  </button>
+                </form>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <button name="right" type="button" class="btn right">
-        right
-      </button>
-    </div>
-    <div class="tasks-list-section mt-5">
-      <div class="container">
-        <ul class="list-group"></ul>
       </div>
     </div>
     <script src="app.js"></script>

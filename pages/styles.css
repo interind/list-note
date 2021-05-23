@@ -4,6 +4,36 @@
   margin: 0 auto;
 }
 
+.popup {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 70%;
+  background-color: rgba(0, 0, 0, .3);
+  transition: all .4s ease;
+  z-index: 10;
+  user-select: none;
+}
+.popup_opened {
+  height: 100vh;
+  visibility: visible;
+  opacity: 1;
+  transition: all .5s ease;
+}
+
+.popup_place_header {
+  display: flex;
+  user-select: none;
+  flex-direction: column;
+  z-index: 10;
+  background-color: #fff;
+  justify-content: space-around;
+}
+
 .check {
   margin: 50px auto;
 }
@@ -50,7 +80,7 @@
   min-height: 60px;
   display: flex;
   border-bottom: 1px solid #808080;
-  margin: 100px 0;
+  margin: 70px 0;
   justify-content: space-between;
   align-items: center;
 }
@@ -66,6 +96,13 @@
   background-color: initial;
 }
 
+.header__button:focus {
+  border: none;
+}
+
+.header__button:hover {
+  cursor: pointer;
+}
 .two-container {
   display: flex;
   justify-content: space-around;
@@ -87,13 +124,18 @@
 }
 
 .container-list {
-  list-style: none;
-  padding-left: 0;
+  list-style: url(../images/round-account-button-with-user-inside_icon-icons.com_72596.png);
   background-color: #f1f8ff;
 }
 
 .container-list__item {
   margin-bottom: 10px;
+  background-color: rgb(121, 211, 195);
+  border-radius: 15px 5px;
+  max-width: 90%;
+  color: #fff;
+  padding-bottom: 10px;
+  padding-left: 5px;
 }
 
 .iframe-content {
@@ -101,9 +143,11 @@
   border: none;
   margin-right: 10px;
   border-top: 1px solid #808080;
+  opacity: .8;
 }
 
 .avatar {
+  position: relative;
   width: 100px;
   height: 30px;
   background-image: url(../images/button_profile/icon__profile.svg);
@@ -113,6 +157,21 @@
 }
 .avatar:hover {
   cursor: pointer;
+}
+
+.avatar__title {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 800;
+  position: absolute;
+  top: 0;
+  right: -100px;
+}
+
+.avatar__info {
+  width: 100%;
+  object-fit: cover;
+  margin-top: -100px;
 }
 
 .input-list {
@@ -150,14 +209,6 @@
   border-radius: 5px;
 }
 
-.container-list__icon {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #f00;
-  border: 0;
-}
-
 .container__title {
   font-family: inherit;
   font-size: 20px;
@@ -183,4 +234,21 @@
 
 .container-group:hover {
   cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  max-width: 1280;
+  width: 100%;
+  border-top: 1px solid #808080;
+  min-height: 40px;
+}
+
+.footer__text {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 20px;
+  color: #808080;
 }

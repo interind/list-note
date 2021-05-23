@@ -12,32 +12,41 @@
     <nav class="header">
       <a class="avatar"></a>
       <button class="header__button"></button>
-    </nav>
-      <div class="two-container">
-        <iframe class="iframe-content" allowfullscreen type="text/html" sandbox="allow-scripts" scrolling="off" src="https://codebeautify.org/jsviewer"></iframe>
-          <div class="container">
-            <h1 class="container__title">Group chat</h1>
-            <select class="container-group">
-              <option class="container-group__item"></option>
-              <option class="container-group__item">😎</option>
-              <option class="container-group__item">🤦‍♀️</option>
-              <option class="container-group__item">👀</option>
-              <option class="container-group__item">🤦‍♂️</option>
-              <option class="container-group__item">🤢</option>
-              <option class="container-group__item">😊</option>
-              <option class="container-group__item">🐱‍🐉</option>
-            </select>
-            <ul class="container-list">
-              <li class="container-list__item">
-                <button class="container-list__icon"></button>
-                1
-              </li>
-            </ul>
-            <div class="form">
-              <input type="text" class="input-list" placeholder="Введите текст">
-              <button type="submit" class="button-submit"></button>
-            </div>
-          </div>
+      <div class="popup popup_place_header">
+        <div class="avatar">
+          <span class="avatar__title">Студент</span>
+        </div>
+        <img class="avatar__info" src="./images/info.png" alt='info'>
       </div>
+    </nav>
+    <div class="two-container">
+      <iframe class="iframe-content" allowfullscreen type="text/html" scrolling="auto" src="https://codebeautify.org/jsviewer"></iframe>
+        <div class="container">
+          <h1 class="container__title">Group chat</h1>
+          <select class="container-group">
+            <option class="container-group__item"></option>
+            <option class="container-group__item">😎</option>
+            <option class="container-group__item">🤦‍♀️</option>
+            <option class="container-group__item">👀</option>
+            <option class="container-group__item">🤦‍♂️</option>
+            <option class="container-group__item">🤢</option>
+            <option class="container-group__item">😊</option>
+            <option class="container-group__item">🐱‍🐉</option>
+          </select>
+          <ul class="container-list">
+            <li class="container-list__item">
+              Привет
+            </li>
+          </ul>
+          <div class="form">
+            <input type="text" class="input-list" placeholder="Введите текст">
+            <button type="submit" class="button-submit"></button>
+          </div>
+        </div>
+    </div>
+    <footer class="footer"><p class="footer__text">
+      &copy;2021 Chat
+    </p></footer>
   </body>
+  <script src="./pages/app.js"></script>
 </html>

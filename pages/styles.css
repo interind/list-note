@@ -228,7 +228,7 @@
   position: absolute;
   right: 5px;
   top: -40px;
-  background-image: url(../images/group/Group_10.png);
+  background-image: url(../images/group/Group_10.svg);
   width: 130px;
   height: 30px;
   background-position: center;
@@ -236,6 +236,7 @@
   background-size: contain;
   border: 0;
   outline: 0;
+  appearance: none;
 }
 
 .container-group:hover {

@@ -126,6 +126,7 @@
 .container-list {
   list-style: url(../images/round-account-button-with-user-inside_icon-icons.com_72596.png);
   background-color: #f1f8ff;
+  overflow-y: scroll;
 }
 
 .container-list__item {

@@ -83,7 +83,7 @@ window.addEventListener('keyup', (evt) => {
     const li = document.createElement('li');
     li.classList.add('container-list__item');
     li.setAttribute('data-task-id', _id);
-    li.textContent = bool ? `#${_id} ${body}` : `Длинна строки #${_id}: ${body.length}`;
+    li.textContent = bool ? `#${_id} ${body}` : `Длина строки #${_id}: ${body.length}`;
     return li;
   }
 

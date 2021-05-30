@@ -1,0 +1,18 @@
+.button__header {
+  width: 50px;
+  height: 40px;
+  background-image: url(../../../images/button-header/Text.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  background-color: initial;
+}
+
+.button__header:focus {
+  border: none;
+}
+
+.button__header:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.form__input {
+  width: 100%;
+  border: none;
+  height: 40px;
+}
+
+.form__input:focus {
+  outline: 1px solid #f00;
+}

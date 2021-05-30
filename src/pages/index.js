@@ -1,6 +1,8 @@
 
+import './index.css';
+
 const popup = document.querySelector('.popup');
-const buttonPopup = document.querySelector('.header__button');
+const buttonPopup = document.querySelector('.button__header');
 
 function openPopup() {
   popup.classList.add('popup_opened');
@@ -43,10 +45,9 @@ const tasks = [
     return acc;
   }, {});
 
-  const listContainer = document.querySelector('.container-list');
-  const convertContainer = document.querySelector('.container-list-req');
+  const [convertContainer, listContainer] = Array.from(document.querySelectorAll('.two-container__list'));
   const form = document.forms['add-task'];
-  const { body: inputBody } = form.elements;
+  const { body: inputBody, key: inputKey } = form.elements;
 
   renderOfTasks(objOfTasks);
 
@@ -81,7 +82,7 @@ window.addEventListener('keyup', (evt) => {
 
   function listItemTemplate({_id, body}, bool) {
     const li = document.createElement('li');
-    li.classList.add('container-list__item');
+    li.classList.add('two-container__item');
     li.setAttribute('data-task-id', _id);
     li.textContent = bool ? `#${_id} ${body}` : `ID${_id} длина: ${body.length}`;
     return li;

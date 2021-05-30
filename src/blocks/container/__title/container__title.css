@@ -1,0 +1,8 @@
+.container__title {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  top: -50px;
+  left: 10px;
+}

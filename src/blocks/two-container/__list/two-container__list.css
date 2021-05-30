@@ -1,0 +1,5 @@
+.two-container__list {
+  list-style: url(../../../images/round-account-button-with-user-inside_icon-icons.com_72596.png);
+  background-color: transparent;
+  overflow-y: scroll;
+}

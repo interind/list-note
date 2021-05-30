@@ -1,0 +1,11 @@
+.check__input {
+  width: 100%;
+  height: 30px;
+  border: 0;
+  border-bottom: 1px solid #808080;
+  margin: 20px 0 5px 0;
+}
+
+.check__input:focus {
+  outline: none;
+}

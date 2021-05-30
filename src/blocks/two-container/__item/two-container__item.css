@@ -1,0 +1,9 @@
+.two-container__item {
+  margin-bottom: 10px;
+  background-color: rgb(121, 211, 195);
+  border-radius: 15px 5px;
+  max-width: 90%;
+  color: #fff;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}

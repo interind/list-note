@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>list-note</title>
+  </head>
+  <body class="body">
+    <nav class="header">
+      <a class="avatar"></a>
+      <button class="button button__header"></button>
+      <div class="popup popup_place_header">
+        <div class="avatar">
+          <span class="avatar__title">Профиль</span>
+        </div>
+        <img class="avatar__info" src="<%=require('../images/info.png')%>" alt='info'>
+      </div>
+    </nav>
+    <div class="two-container">
+      <div class="two-container__content">
+        <ul class="two-container__list">
+        </ul>
+      </div>
+      <div class="container">
+        <h1 class="container__title">Group chat</h1>
+        <select class="container-group">
+          <option class="container-group__item"></option>
+          <option class="container-group__item">😎</option>
+          <option class="container-group__item">🤦‍♀️</option>
+          <option class="container-group__item">👀</option>
+          <option class="container-group__item">🤦‍♂️</option>
+          <option class="container-group__item">🤢</option>
+          <option class="container-group__item">😊</option>
+          <option class="container-group__item">🐱‍🐉</option>
+        </select>
+        <ul class="two-container__list">
+        </ul>
+        <form class="form" name="add-task">
+          <input type="text" name="body" class="form__input" placeholder="Введите текст запроса">
+          <input type="text" name="key" class="form__input" placeholder="Введите ключ">
+          <button type="submit" class="button button__submit"></button>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <p class="footer__text">
+        &copy;2021 Chat
+      </p>
+    </footer>
+  </body>
+</html>

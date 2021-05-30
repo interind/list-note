@@ -1,0 +1,8 @@
+.popup_place_header {
+  display: flex;
+  user-select: none;
+  flex-direction: column;
+  z-index: 10;
+  background-color: #fff;
+  justify-content: space-around;
+}

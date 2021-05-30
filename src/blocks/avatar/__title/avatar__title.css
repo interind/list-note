@@ -1,0 +1,8 @@
+.avatar__title {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 800;
+  position: absolute;
+  top: 0;
+  right: -100px;
+}

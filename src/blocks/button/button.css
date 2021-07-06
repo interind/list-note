@@ -1,3 +1,11 @@
 .button {
   border: 0;
 }
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus {
+  border: none;
+}

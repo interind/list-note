@@ -5,5 +5,5 @@
 }
 
 .form__input:focus {
-  outline: 1px solid #f00;
+  outline: none;
 }

@@ -1,7 +1,7 @@
 .button__submit {
   position: absolute;
   right: 10px;
-  top: 5px;
+  top: 30px;
   width: 20px;
   height: 30px;
   background-image: url(../../../images/button_chat/more_vert_24px_rounded.svg);
@@ -9,12 +9,4 @@
   background-position: center;
   background-color: initial;
   color: #fff;
-}
-
-.button__submit:hover {
-  cursor: pointer;
-}
-
-.button__submit:focus {
-  border: none;
 }

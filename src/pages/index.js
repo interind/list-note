@@ -1,8 +1,15 @@
 
 import './index.css';
-
-const popup = document.querySelector('.popup');
-const buttonPopup = document.querySelector('.button__header');
+import {
+    convertContainer,
+    listContainer,
+    popup,
+    tasks,
+    form,
+    buttonPopup,
+    inputBody,
+    inputKey
+} from '../utils/constants';
 
 function openPopup() {
   popup.classList.add('popup_opened');
@@ -12,42 +19,13 @@ function closePopup() {
   popup.classList.remove('popup_opened');
 }
 
-const tasks = [
-  {
-    _id: '03d40b3',
-    completed: true,
-    body:
-      'Occaecat non ea quis occaecat ad culpa amet deserunt incididunt elit fugiat pariatur. Exercitation commodo culpa in veniam proident laboris in. Excepteur cupidatat eiusmod dolor consectetur exercitation nulla aliqua veniam fugiat irure mollit. Eu dolor dolor excepteur pariatur aute do do ut pariatur consequat reprehenderit deserunt.\r\n',
-  },
-  {
-    _id: '94095c1288e0',
-    completed: false,
-    body:
-      'Aliquip cupidatat ex adipisicing veniam do tempor. Lorem nulla adipisicing et esse cupidatat qui deserunt in fugiat duis est qui. Est adipisicing ipsum qui cupidatat exercitation. Cupidatat aliqua deserunt id deserunt excepteur nostrud culpa eu voluptate excepteur. Cillum officia proident anim aliquip. Dolore veniam qui reprehenderit voluptate non id anim.\r\n',
-  },
-  {
-    _id: '532496aa7',
-    completed: true,
-    body:
-      'Occaecat non ea quis occaecat ad culpa amet deserunt incididunt elit fugiat pariatur. Exercitation commodo culpa in veniam proident laboris in. Excepteur cupidatat eiusmod dolor consectetur exercitation nulla aliqua veniam fugiat irure mollit. Eu dolor dolor excepteur pariatur aute do do ut pariatur consequat reprehenderit deserunt.\r\n',
-  },
-  {
-    _id: '4788e0',
-    completed: false,
-    body:
-      'Aliquip cupidatat ex adipisicing veniam do tempor. Lorem nulla adipisicing et esse cupidatat qui deserunt in fugiat duis est qui. Est adipisicing ipsum qui cupidatat exercitation. Cupidatat aliqua deserunt id deserunt excepteur nostrud culpa eu voluptate excepteur. Cillum officia proident anim aliquip. Dolore veniam qui reprehenderit voluptate non id anim.\r\n',
-  },
-];
-
 (function(arrOfTasks) {
   const objOfTasks = arrOfTasks.reduce((acc, task) => {
     acc[task._id] = task;
     return acc;
   }, {});
 
-  const [convertContainer, listContainer] = Array.from(document.querySelectorAll('.two-container__list'));
-  const form = document.forms['add-task'];
-  const { body: inputBody, key: inputKey } = form.elements;
+
 
   renderOfTasks(objOfTasks);
 
@@ -80,13 +58,13 @@ window.addEventListener('keyup', (evt) => {
     convertContainer.appendChild(fragmentRequest);
   }
 
-  function listItemTemplate({_id, body}, bool) {
-    const li = document.createElement('li');
-    li.classList.add('two-container__item');
-    li.setAttribute('data-task-id', _id);
-    li.textContent = bool ? `#${_id} ${body}` : `ID${_id} длина: ${body.length}`;
-    return li;
-  }
+  // function listItemTemplate({_id, body}, bool) {
+  //   const li = document.createElement('li');
+  //   li.classList.add('two-container__item');
+  //   li.setAttribute('data-task-id', _id);
+  //   li.textContent = bool ? `#${_id} ${body}` : `ID${_id} длина: ${body.length}`;
+  //   return li;
+  // }
 
   function onFormSubmitHandler(evt) {
     evt.preventDefault();
@@ -101,7 +79,7 @@ window.addEventListener('keyup', (evt) => {
   function createNewTask(body) {
     const newTask = {
       body,
-      complited: false,
+      completed: false,
       _id: `-${Math.random()}`,
     };
     objOfTasks[newTask._id] = newTask; // добавление объекта в объект задач

@@ -8,11 +8,3 @@
   border: 0;
   background-color: initial;
 }
-
-.button__header:focus {
-  border: none;
-}
-
-.button__header:hover {
-  cursor: pointer;
-}
